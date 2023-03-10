@@ -4,7 +4,7 @@ const inputLength = Number(textInput.getAttribute("data-length"));
 console.log(inputLength)
 
 
-textInput.addEventListener("blur", () => {
+textInput.addEventListener("blur", () => { 
   if (textInput.value.length <= inputLength) {
     textInput.classList.add("valid");
   } else {
@@ -12,3 +12,4 @@ textInput.addEventListener("blur", () => {
   }
   
 });
+ 

@@ -1,4 +1,4 @@
-const ingredientsName = [
+const ingredients = [
   'Potatoes',
   'Mushrooms',
   'Garlic',
@@ -7,15 +7,47 @@ const ingredientsName = [
   'Condiments',
 ];
 const ingredientsList = document.querySelector("#ingredients")
-const elements = []
-ingredientsName.forEach((ingredient) => {
-const liEl = document.createElement("li");
+const makeElements = (ingredient) => {
+  const liEl = document.createElement("li");
   liEl.textContent = ingredient;
   console.log(liEl);
   liEl.classList.add(".item");
-  elements.push(liEl);
+  return liEl;
+};
 
-});
+const elements = ingredients.map(makeElements);
+ingredientsList.append(...elements);  
 
-console.log(elements);
-ingredientsList.append(...elements);
+
+
+// 2------
+// const elements = []
+// ingredients.forEach((ingredient) => {
+// const liEl = document.createElement("li");
+//   liEl.textContent = ingredient;
+//   console.log(liEl);
+//   liEl.classList.add(".item");
+//   elements.push(liEl);
+
+// });
+
+// console.log(elements);
+// ingredientsList.append(...elements);
+
+
+// 3----------
+// const makeElements = ingredients => {
+//   return ingredients.map((ingredient) => {
+//     const liEl = document.createElement("li");
+//     liEl.textContent = ingredient;
+//     console.log(liEl);
+//     liEl.classList.add(".item");
+//     return liEl;
+//   });
+//   //
+// };
+// const elements = makeElements(ingredients);
+// ingredientsList.append(...elements)
+
+
+
