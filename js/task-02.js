@@ -6,19 +6,20 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-const ingredientsList = document.querySelector("#ingredients")
-const makeElements = (ingredient) => {
-  const liEl = document.createElement("li");
-  liEl.textContent = ingredient;
-  console.log(liEl);
-  liEl.classList.add(".item");
-  return liEl;
+const ingredientsList = document.querySelector("#ingredients");
+
+const makeElements = (ingredients) => {
+  return ingredients.map((ingredient) => {
+    const liEl = document.createElement("li");
+    liEl.textContent = ingredient;
+    console.log(liEl);
+    liEl.classList.add("item");
+    return liEl;
+  });
+  //
 };
 
-const elements = ingredients.map(makeElements);
-ingredientsList.append(...elements);  
-
-
+ingredientsList.append(...makeElements(ingredients));
 
 // 2------
 // const elements = []
@@ -26,7 +27,7 @@ ingredientsList.append(...elements);
 // const liEl = document.createElement("li");
 //   liEl.textContent = ingredient;
 //   console.log(liEl);
-//   liEl.classList.add(".item");
+//   liEl.classList.add("item");
 //   elements.push(liEl);
 
 // });
@@ -36,18 +37,14 @@ ingredientsList.append(...elements);
 
 
 // 3----------
-// const makeElements = ingredients => {
-//   return ingredients.map((ingredient) => {
-//     const liEl = document.createElement("li");
-//     liEl.textContent = ingredient;
-//     console.log(liEl);
-//     liEl.classList.add(".item");
-//     return liEl;
-//   });
-//   //
+// const makeElements = (ingredient) => {
+//   const liEl = document.createElement("li");
+//   liEl.textContent = ingredient;
+//   console.log(liEl);
+//   liEl.classList.add("item");
+//   return liEl;
 // };
-// const elements = makeElements(ingredients);
-// ingredientsList.append(...elements)
 
+// ingredientsList.append(...makeElements(ingredients));
 
 

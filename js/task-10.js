@@ -12,6 +12,7 @@ const divBoxesEl = document.querySelector("#boxes");
 
 function createBoxes(amount) {
   amount = inputEl.value;
+  destroyBoxes();
   for (let i = 0; i < amount; i += 1) {
     const div = document.createElement("div");
     div.style.height = `${30 + 10 * i}px`;
@@ -19,6 +20,7 @@ function createBoxes(amount) {
     divBoxesEl.append(div);
     div.style.backgroundColor = getRandomHexColor();
   }
+ 
 }
 
 buttonCreateEl.addEventListener("click", createBoxes);

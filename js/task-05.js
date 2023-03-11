@@ -7,4 +7,8 @@ refs.input.addEventListener("input", onInputChange);
 
 function onInputChange(event) {
   refs.title.textContent = event.currentTarget.value;
+
+  if (event.target.value === "") {
+    refs.title.textContent = "Anonymous";
+  }
 }
